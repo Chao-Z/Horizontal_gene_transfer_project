@@ -12,9 +12,9 @@ B_id = []
 in_accession_ids = False
 Last_ID,Final_ID = '',''
 # function for parse fasta sequences in id and sequences
-def read_fasta(file):
+def read_fasta(file_name):
     name,seq = None,[]
-    for line in file:
+    for line in file_name:
         line = line.rstrip()
         if line.startswith('>'):
             if name:yield(name,''.join(seq))
