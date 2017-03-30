@@ -9,9 +9,9 @@ f1 = open(sys.argv[2],'r')
 All_list, Check_list, Final_list = [],[],[]
 ID1, ID2, ID3, Last_id = '','','',''
 
-def read_fasta(file):
+def read_fasta(file_name):
     name,seq = None,[]
-    for line in file:
+    for line in file_name:
         line = line.rstrip()
         if line.startswith(">"):
             if name:yield(name,''.join(seq))
