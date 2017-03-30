@@ -1,5 +1,5 @@
 # used to extract fasta sequences from 50 to 100 in HGT identify 
-# command: python Extract_fasta.py file1(protein file) file2(blastp result) file3(ID file)
+# command: python Extract_fasta_1.py file1(protein file) file2(blastp result) file3(ID file)
 # file3 is the id file containing the id you want to extract
 import sys
 
