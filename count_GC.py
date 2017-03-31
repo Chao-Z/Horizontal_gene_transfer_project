@@ -1,7 +1,10 @@
+# this script to count GC content and GC skew per sequences
+
 import sys
 
 f2 = open(sys.argv[2],'w')
 
+# function for parse each sequences
 def read_fasta(file_name):
     name,seq = None,[]
     for line in file_name:
