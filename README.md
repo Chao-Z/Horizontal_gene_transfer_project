@@ -7,4 +7,3 @@ Extract_fasta_1.py will be used for extracting top 50 to 100 hit sequences from 
 
 Extract_fasta_2.py will be used for extracting all hit sequences from close organisms.
 
-More detail information will be coming soon.
