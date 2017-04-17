@@ -38,7 +38,7 @@ python Parse_blast_result.py HGT_identify_blastp_result.txt HGT_identify_blastp_
 
 3 Using second python script to extract protein sequences of donate organisms (B.fa; B database) from 50 to 100:
 
-python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <file3: ID file>
+python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <ID file>
 
 Note: ID file contains all candidate ids, one per line; like:
 
@@ -50,7 +50,7 @@ ID2
 
 4 Using third python script to extract all similar sequences of close(background) organisms (A.fa; A database):
 
-python Extract_fasta_2.py A.fa Blastp_result.txt
+python Extract_fasta_2.py A.fa <Blastp_result.txt>
 
 Note: please note the blastp_result file only includes query ids you want to extract and their blastp hits; like:
 
