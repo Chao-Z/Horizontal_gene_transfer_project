@@ -35,7 +35,7 @@ python Parse_blast_result.py HGT_identify_blastp_result.txt HGT_identify_blastp_
 
 python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <file3: ID file>
 
-# ID file contains all candidate ids, one per line; like:
+Note: ID file contains all candidate ids, one per line; like:
 ID1
 ID2
 ……
@@ -44,7 +44,7 @@ ID2
 
 python Extract_fasta_2.py A.fa Blastp_result.txt
 
-# please note the blastp_result file only includes query ids you want to extract and their blastp hits; like:
+Note: please note the blastp_result file only includes query ids you want to extract and their blastp hits; like:
 ID1 hit1
 ID1 hit2
 ……
@@ -62,4 +62,4 @@ for i in *.c.fa; do mafft -auto $i > $i.ali.fa; done
 for i in *.ali.fa; do trimAI –in $i –out $i.del.fa –automated1; done
 for i in *.del.fa; do raxmlHPC –f d –m PROTCATAUTO –p 123456 –s $i –n $i.tre; done
 
-# Actually you could select other methods and programs you like to build trees, such as MrBayes.
+Actually you could select other methods and programs you like to build trees, such as MrBayes.
