@@ -20,7 +20,9 @@ Please let’s assume have two fasta files of different protein sequences databa
 1 For clearly distinguish two different protein sequences, using following commands to change the name per sequences and then combine it:
 
 sed 's/>/>A|/g' Prepare_A.fa > A.fa
+
 sed 's/>/>B|/g' Prepare_B.fa > B.fa
+
 cat A.fa B.fa > HGT_identify_database.fa
 
 2 Now use local blast to produce blastp result: 
@@ -39,6 +41,7 @@ python Parse_blast_result.py HGT_identify_blastp_result.txt HGT_identify_blastp_
 python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <file3: ID file>
 
 Note: ID file contains all candidate ids, one per line; like:
+
 ID1
 
 ID2
