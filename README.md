@@ -10,6 +10,7 @@ HGT Identity = best_hit_Identity_in_A_database - best_hit_Identity_in_B_database
 Extract_fasta_1.py could be used for extracting top 50 to 100 hit sequences from potential donate organisms.
 
 Extract_fasta_2.py could be used for extracting all hit sequences from close organisms.
+
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Please let’s assume have two fasta files of different protein sequences database with name Prepare_A.fa and Prepare_B.fa respectively. The Prepare_A.fa is the background proteins and from close organisms with the research species, and Prepare_B is from the potential donate organisms.  
@@ -62,5 +63,3 @@ for i in *.ali.fa; do trimAI –in $i –out $i.del.fa –automated1; done
 for i in *.del.fa; do raxmlHPC –f d –m PROTCATAUTO –p 123456 –s $i –n $i.tre; done
 
 # Actually you could select other methods and programs you like to build trees, such as MrBayes.
-
-
