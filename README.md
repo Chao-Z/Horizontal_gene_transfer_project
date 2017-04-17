@@ -24,6 +24,7 @@ cat A.fa B.fa > HGT_identify_database.fa
 2 Now use local blast to produce blastp result: 
 
 makeblastdb -in HGT_identify_database.fa -dbtype prot -out HGT_identify_database
+
 blastp -db HGT_identify_database -query <your file> -outfmt 6 -out HGT_identify_blastp_result.txt -evalue 1e-5
 
 3 Using first python script to get HGT AI, HGT Index, as well as HGT Identity per query proteins:
@@ -37,7 +38,9 @@ python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <file3: ID file>
 
 Note: ID file contains all candidate ids, one per line; like:
 ID1
+
 ID2
+
 ……
 
 4 Using third python script to extract all similar sequences of close(background) organisms (A.fa; A database):
@@ -45,11 +48,17 @@ ID2
 python Extract_fasta_2.py A.fa Blastp_result.txt
 
 Note: please note the blastp_result file only includes query ids you want to extract and their blastp hits; like:
+
 ID1 hit1
+
 ID1 hit2
+
 ……
+
 ID2 hit1
+
 ID2 hit2
+
 ……
 
 5 Combining two files into one file used to do alignment and build phylogenic tree:
@@ -59,7 +68,9 @@ for i in ID1 ID2 …; do cat $i.1.fa $i.2.fa > $i.c.fa; done
 6 The following commands are used in my project to do alignment, delete unconserved regions and construct phylogenic tree:
 
 for i in *.c.fa; do mafft -auto $i > $i.ali.fa; done
+
 for i in *.ali.fa; do trimAI –in $i –out $i.del.fa –automated1; done
+
 for i in *.del.fa; do raxmlHPC –f d –m PROTCATAUTO –p 123456 –s $i –n $i.tre; done
 
 Actually you could select other methods and programs you like to build trees, such as MrBayes.
