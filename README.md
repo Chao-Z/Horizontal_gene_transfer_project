@@ -29,7 +29,7 @@ cat A.fa B.fa > HGT_identify_database.fa
 
 makeblastdb -in HGT_identify_database.fa -dbtype prot -out HGT_identify_database
 
-blastp -db HGT_identify_database -query <your file> -outfmt 6 -out HGT_identify_blastp_result.txt -evalue 1e-5
+blastp -db HGT_identify_database -query fasta_file -outfmt 6 -out HGT_identify_blastp_result.txt -evalue 1e-5
 
 3 Using first python script to get HGT AI, HGT Index, as well as HGT Identity per query proteins:
 
@@ -38,9 +38,9 @@ python Parse_blast_result.py HGT_identify_blastp_result.txt HGT_identify_blastp_
 
 3 Using second python script to extract protein sequences of donate organisms (B.fa; B database) from 50 to 100:
 
-python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt <ID file>
+python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt ID_file
 
-Note: ID file contains all candidate ids, one per line; like:
+Note: ID_file contains all candidate ids, one per line; like:
 
 ID1
 
@@ -50,9 +50,9 @@ ID2
 
 4 Using third python script to extract all similar sequences of close(background) organisms (A.fa; A database):
 
-python Extract_fasta_2.py A.fa <Blastp_result.txt>
+python Extract_fasta_2.py A.fa Blastp_result
 
-Note: please note the blastp_result file only includes query ids you want to extract and their blastp hits; like:
+Note: Blastp_result file only includes query ids you want to extract and their blastp hits; like:
 
 ID1 hit1
 
