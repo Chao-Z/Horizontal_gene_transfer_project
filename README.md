@@ -36,7 +36,7 @@ blastp -db HGT_identify_database -query fasta_file -outfmt 6 -out HGT_identify_b
 python Parse_blast_result.py HGT_identify_blastp_result.txt HGT_identify_blastp_result_parse_result.txt
 
 
-3 Using second python script to extract protein sequences of donate organisms (B.fa; B database) from 50 to 100:
+4 Using second python script to extract protein sequences of donate organisms (B.fa; B database) from 50 to 100:
 
 python Extract_fasta_1.py B.fa HGT_identify_blastp_result.txt ID_file
 
@@ -48,7 +48,7 @@ ID2
 
 ……
 
-4 Using third python script to extract all similar sequences of close(background) organisms (A.fa; A database):
+5 Using third python script to extract all similar sequences of close(background) organisms (A.fa; A database):
 
 python Extract_fasta_2.py A.fa Blastp_result
 
@@ -66,11 +66,11 @@ ID2 hit2
 
 ……
 
-5 Combining two files into one file used to do alignment and build phylogenic tree:
+6 Combining two files into one file used to do alignment and build phylogenic tree:
 
 for i in ID1 ID2 …; do cat $i.1.fa $i.2.fa > $i.c.fa; done
 
-6 The following commands are used in my project to do alignment, delete unconserved regions and construct phylogenic tree:
+7 The following commands are used in my project to do alignment, delete unconserved regions and construct phylogenic tree:
 
 for i in *.c.fa; do mafft -auto $i > $i.ali.fa; done
 
