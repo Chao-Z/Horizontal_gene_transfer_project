@@ -1,5 +1,5 @@
 # Horizontal_gene_transfer_project
-Three python scripts are wrote for inferring HGT events. 
+Three python scripts were wrote for inferring HGT events. 
 
 Parse_blast_result.py can be used to parse blastp results based on HGT AI, HGT Index, as well as HGT Identity. 
 
@@ -15,9 +15,9 @@ Extract_fasta_2.py can be used for extracting all hit sequences from close organ
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Please let’s assume have two fasta files of different protein sequences database with name Prepare_A.fa and Prepare_B.fa respectively. The Prepare_A.fa is the background proteins and from close organisms with the research species, and Prepare_B is from the potential donate organisms.  
+Assuming have two fasta files of different protein sequences database with name Prepare_A.fa and Prepare_B.fa respectively. The Prepare_A.fa is the background proteins and from close organisms with the studing species, and Prepare_B is from the potential donate organisms.  
 
-1 For clearly distinguish two different protein sequences, using following commands to change the name per sequences and then combine it:
+1 For clearly distinguish two different protein sequences, using following commands to change the name of sequences and then combine it:
 
 sed 's/>/>A|/g' Prepare_A.fa > A.fa
 
@@ -25,7 +25,7 @@ sed 's/>/>B|/g' Prepare_B.fa > B.fa
 
 cat A.fa B.fa > HGT_identify_database.fa
 
-2 Now use local blast to produce blastp result: 
+2 Now use local blast to generate blastp result: 
 
 makeblastdb -in HGT_identify_database.fa -dbtype prot -out HGT_identify_database
 
