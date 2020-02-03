@@ -15,7 +15,7 @@ Extract_fasta_2.py can be used for extracting all hit sequences from close organ
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
-Assuming have two fasta files of different protein sequences database with name Prepare_A.fa and Prepare_B.fa respectively. The Prepare_A.fa is the background proteins and from close organisms with the studing species, and Prepare_B is from the potential donate organisms.  
+Assuming having two fasta files of different protein sequences database with name Prepare_A.fa and Prepare_B.fa, respectively, the Prepare_A.fa is the background proteins and from close organisms with the studing species, and Prepare_B is from the potential donate organisms.  
 
 1 For clearly distinguish two different protein sequences, using following commands to change the name of sequences and then combine it:
 
@@ -25,7 +25,7 @@ sed 's/>/>B|/g' Prepare_B.fa > B.fa
 
 cat A.fa B.fa > HGT_identify_database.fa
 
-2 Now use local blast to generate blastp result: 
+2 Now run local blast to generate blastp result: 
 
 makeblastdb -in HGT_identify_database.fa -dbtype prot -out HGT_identify_database
 
@@ -78,4 +78,4 @@ for i in *.ali.fa; do trimAI –in $i –out $i.del.fa –automated1; done
 
 for i in *.del.fa; do raxmlHPC –f d –m PROTCATAUTO –p 123456 –s $i –n $i.tre; done
 
-Actually you could select other methods and programs you like to build trees, such as MrBayes.
+Actually, you could select other methods and programs you like to build trees, such as MrBayes.
